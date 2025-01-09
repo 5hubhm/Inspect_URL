@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "validate": "^5.2.0",
+    "validator": "^13.12.0"
+  },
+  "name": "inspect_url",
+  "version": "0.0.1",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/5hubhm/Inspect_URL.git"
+  },
+  "author": "Shubham",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/5hubhm/Inspect_URL/issues"
+  },
+  "homepage": "https://github.com/5hubhm/Inspect_URL#readme",
+  "description": ""
+}

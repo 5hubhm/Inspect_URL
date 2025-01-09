@@ -1,0 +1,64 @@
+# Node.js dependencies
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build artifacts
+dist/
+build/
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm/
+
+# dotenv environment variables
+.env
+.env.local
+.env.*.local
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# MacOS system files
+.DS_Store
+
+# Thumbnails
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.swp
+
+# Coverage reports
+coverage/
+.nyc_output/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Parcel-bundler cache (if using Parcel)
+.cache/
+
+# SvelteKit specific (if using SvelteKit)
+.svelte-kit/
+
+# Next.js specific (if using Next.js)
+.next/
+
+# Remix specific (if using Remix)
+.build/
+
+# Nuxt.js specific (if using Nuxt.js)
+.nuxt/
