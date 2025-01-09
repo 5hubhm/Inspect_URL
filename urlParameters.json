@@ -1,3 +1,20 @@
-{
-  "username": "shubham"
-}
+[
+  {
+    "url": "https://elearning.paruluniversity.ac.in/?username=shubham",
+    "params": {
+      "username": "shubham"
+    }
+  },
+  {
+    "url": "https://elearning.paruluniversity.ac.in/?username=jesh",
+    "params": {
+      "username": "jesh"
+    }
+  },
+  {
+    "url": "https://elearning.paruluniversity.ac.in/?username=shubh",
+    "params": {
+      "username": "shubh"
+    }
+  }
+]

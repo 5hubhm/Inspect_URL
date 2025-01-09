@@ -4,9 +4,9 @@ import chalk from "chalk";
 import url from "url";
 
 let path = process.argv[2];
-const blockedFilePath = './blockedURL.txt';
-const outputFilePath = './enteredValidateURL.txt';
-const paramsFilePath = './urlParameters.json'; 
+const blockedFilePath = './block-url.txt'; // File containing blocked URLs
+const outputFilePath = './enteredValidateURL.txt'; // File to save valid URLs
+const paramsFilePath = './urlParameters.json'; // File to store query parameters
 
 if (path == undefined) {
     console.log(chalk.red("Please Enter a Path"));
@@ -15,7 +15,7 @@ if (path == undefined) {
 
 if (validator.isURL(path)) {
     try {
-        const blockedURLs = fs.existsSync(blockedFilePath) 
+        const blockedURLs = fs.existsSync(blockedFilePath)
             ? fs.readFileSync(blockedFilePath, 'utf-8').split('\n').map(url => url.trim()).filter(url => url !== '')
             : [];
 
@@ -29,7 +29,7 @@ if (validator.isURL(path)) {
     }
 
     console.log(chalk.green("Valid URL:"), chalk.blueBright(`${path}`));
-    
+
     let uri = url.parse(path, true);
     console.log(chalk.green("Host:"), chalk.blueBright(uri.host));
 
@@ -38,7 +38,16 @@ if (validator.isURL(path)) {
         console.log(chalk.green("Extracted Parameters:"), queryParams);
 
         try {
-            fs.writeFileSync(paramsFilePath, JSON.stringify(queryParams, null, 2));
+            // Initialize or load existing parameters
+            const existingParams = fs.existsSync(paramsFilePath)
+                ? JSON.parse(fs.readFileSync(paramsFilePath, 'utf-8'))
+                : [];
+
+            // Add new parameters to the array
+            existingParams.push({ url: path, params: queryParams });
+
+            // Write updated parameters to JSON file
+            fs.writeFileSync(paramsFilePath, JSON.stringify(existingParams, null, 2));
             console.log(chalk.yellow(`Parameters have been saved to ${paramsFilePath}`));
         } catch (error) {
             console.error(chalk.red("Error writing parameters to JSON file:"), error.message);
